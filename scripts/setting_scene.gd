@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var slider := $Board/Label/HSlider
+@onready var slider := $Board/Label/Panel/HSlider
 @onready var setting_scene := $"."
 
 func _ready():
