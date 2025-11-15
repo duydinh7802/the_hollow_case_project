@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://ds00u2tgt7fsi"]
+
+[ext_resource type="AudioStream" uid="uid://xsal4n85164p" path="res://assets/musics/Soliloquy from OpenGameArt.mp3" id="1_0rulj"]
+
+[node name="BackgroundMusic" type="AudioStreamPlayer"]
+stream = ExtResource("1_0rulj")
+autoplay = true

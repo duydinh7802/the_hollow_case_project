@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://coot6jf2hl22f"]
+
+[ext_resource type="TileSet" uid="uid://dcrv13lctl215" path="res://assets/tilesets/game_play_scene.tres" id="1_qdwgm"]
+
+[node name="GamePlayMap" type="Node2D"]
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(-65, 23)
+tile_map_data = PackedByteArray(0, 0, 3, 0, 11, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = ExtResource("1_qdwgm")

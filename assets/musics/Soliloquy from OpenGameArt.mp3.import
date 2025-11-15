@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://xsal4n85164p"
+path="res://.godot/imported/Soliloquy from OpenGameArt.mp3-f1def018e6cb6007e778396502320f86.mp3str"
+
+[deps]
+
+source_file="res://assets/musics/Soliloquy from OpenGameArt.mp3"
+dest_files=["res://.godot/imported/Soliloquy from OpenGameArt.mp3-f1def018e6cb6007e778396502320f86.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,99 @@
+[gd_scene load_steps=9 format=3 uid="uid://d3n73jfnd6cdn"]
+
+[ext_resource type="Texture2D" uid="uid://j2wtf8i8jgv" path="res://assets/menu/homepage_blur.png" id="1_2bek4"]
+[ext_resource type="Script" uid="uid://cmypofurhao6i" path="res://scripts/setting_scene.gd" id="1_6whhp"]
+[ext_resource type="Texture2D" uid="uid://vlujqirvsds3" path="res://assets/menu/board.png" id="2_05bhw"]
+[ext_resource type="FontFile" uid="uid://dg5eba2um8kyd" path="res://assets/fonts/BRLNSDB.TTF" id="3_m6lu0"]
+[ext_resource type="Texture2D" uid="uid://pc8n84ax8sme" path="res://assets/buttons/volumn_max.png" id="5_uhwgb"]
+[ext_resource type="Texture2D" uid="uid://dglws2t40gwhs" path="res://assets/buttons/volumn_min.png" id="6_7u7b6"]
+[ext_resource type="Texture2D" uid="uid://c4x6ujyop7osn" path="res://assets/buttons/back.png" id="7_5wqkv"]
+[ext_resource type="Texture2D" uid="uid://b6flxhuo8g6ew" path="res://assets/buttons/back_press.png" id="8_3f56p"]
+
+[node name="SettingScene" type="Node2D"]
+script = ExtResource("1_6whhp")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+offset_right = 1962.3751
+offset_bottom = 1118.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_2bek4")
+expand_mode = 1
+
+[node name="Board" type="TextureRect" parent="."]
+offset_left = 254.0
+offset_top = -178.0
+offset_right = 1720.0
+offset_bottom = 1288.0
+texture = ExtResource("2_05bhw")
+
+[node name="Label" type="Label" parent="Board"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -89.0
+offset_top = -364.0
+offset_right = 155.0
+offset_bottom = -272.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.80296737, 0.60150415, 0.29117194, 1)
+theme_override_constants/shadow_offset_x = 8
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("3_m6lu0")
+theme_override_font_sizes/font_size = 60
+text = "Setting"
+
+[node name="HSlider" type="HSlider" parent="Board/Label"]
+layout_mode = 0
+offset_left = -133.0
+offset_top = 376.0
+offset_right = 296.0
+offset_bottom = 392.0
+max_value = 1.0
+step = 0.1
+value = 1.0
+
+[node name="VolumnMax" type="TextureButton" parent="Board/Label"]
+layout_mode = 0
+offset_left = 310.0
+offset_top = 345.0
+offset_right = 377.0
+offset_bottom = 421.55643
+texture_normal = ExtResource("5_uhwgb")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="VolumnMin" type="TextureButton" parent="Board/Label"]
+layout_mode = 0
+offset_left = -189.0
+offset_top = 363.0
+offset_right = -151.0
+offset_bottom = 406.42007
+texture_normal = ExtResource("6_7u7b6")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Back" type="TextureButton" parent="Board/Label"]
+layout_mode = 0
+offset_left = -323.0
+offset_top = 139.0
+offset_right = -237.0
+offset_bottom = 225.0
+texture_normal = ExtResource("7_5wqkv")
+texture_pressed = ExtResource("8_3f56p")
+texture_hover = ExtResource("8_3f56p")
+ignore_texture_size = true
+stretch_mode = 0
+
+[connection signal="value_changed" from="Board/Label/HSlider" to="." method="_on_h_slider_value_changed"]
+[connection signal="pressed" from="Board/Label/Back" to="." method="_on_back_pressed"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://benmmccrq2vcj"]
+
+[ext_resource type="Script" uid="uid://bsqscpsve7kie" path="res://scripts/timer_node.gd" id="1_sc3fp"]
+[ext_resource type="FontFile" uid="uid://dg5eba2um8kyd" path="res://assets/fonts/BRLNSDB.TTF" id="2_sc3fp"]
+
+[node name="TimerNode" type="Node2D"]
+position = Vector2(1009, 73)
+script = ExtResource("1_sc3fp")
+
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0.9764706, 0.44313726, 0.07058824, 1)
+theme_override_constants/shadow_offset_x = 11
+theme_override_constants/shadow_offset_y = 5
+theme_override_fonts/font = ExtResource("2_sc3fp")
+theme_override_font_sizes/font_size = 110
+text = "00:00"
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

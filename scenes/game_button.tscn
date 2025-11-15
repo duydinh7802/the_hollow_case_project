@@ -1,0 +1,112 @@
+[gd_scene load_steps=13 format=3 uid="uid://bkm8o2m1shneu"]
+
+[ext_resource type="Texture2D" uid="uid://c7qwm34onpw3y" path="res://assets/buttons/setting_ingame.png" id="1_n4aew"]
+[ext_resource type="Script" uid="uid://bfn11jsskwwfq" path="res://scripts/game_button.gd" id="1_y5pdq"]
+[ext_resource type="Texture2D" uid="uid://bldjwon0ahm04" path="res://assets/buttons/setting_ingame_press.png" id="2_uq3x3"]
+[ext_resource type="Texture2D" uid="uid://dqr45fq4xv2b6" path="res://assets/buttons/option_ingame.png" id="3_dcps2"]
+[ext_resource type="Texture2D" uid="uid://qlnn2n1nbjw" path="res://assets/buttons/option_ingame_press.png" id="4_ncl57"]
+[ext_resource type="Texture2D" uid="uid://c7rs6pbdeb1ww" path="res://assets/backgrounds/noti_board.png" id="5_ncl57"]
+[ext_resource type="Texture2D" uid="uid://c0nur8v0vvn23" path="res://assets/buttons/resume_ingame.png" id="6_4hf2r"]
+[ext_resource type="Texture2D" uid="uid://b7tkqcrcaix4l" path="res://assets/buttons/home_ingame.png" id="6_ij4fq"]
+[ext_resource type="Texture2D" uid="uid://ctpvxd5xj3bo2" path="res://assets/buttons/home_ingame_press.png" id="7_qaxt8"]
+[ext_resource type="Texture2D" uid="uid://b8ra0dgakf3vh" path="res://assets/buttons/resume_ingame_press.png" id="7_y5pdq"]
+[ext_resource type="PackedScene" uid="uid://d3n73jfnd6cdn" path="res://scenes/setting_scene.tscn" id="11_imit5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wedmr"]
+texture = ExtResource("5_ncl57")
+
+[node name="GameButton" type="CanvasLayer"]
+script = ExtResource("1_y5pdq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.2, 0.2, 0.2, 0.44705883)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+z_index = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 785.0
+offset_top = -509.5
+offset_right = 941.6001
+offset_bottom = -437.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Setting" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("1_n4aew")
+texture_pressed = ExtResource("2_uq3x3")
+texture_hover = ExtResource("2_uq3x3")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Option" type="TextureButton" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_dcps2")
+texture_pressed = ExtResource("4_ncl57")
+texture_hover = ExtResource("4_ncl57")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Panel" type="Panel" parent="."]
+offset_left = -4.0
+offset_top = -397.0
+offset_right = 1920.0
+offset_bottom = 1527.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_wedmr")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
+z_index = 1
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -172.0
+offset_top = -96.0
+offset_right = 289.10034
+offset_bottom = 116.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 5
+
+[node name="Resume" type="TextureButton" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_4hf2r")
+texture_pressed = ExtResource("7_y5pdq")
+texture_hover = ExtResource("7_y5pdq")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="Home" type="TextureButton" parent="Panel/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_ij4fq")
+texture_pressed = ExtResource("7_qaxt8")
+texture_hover = ExtResource("7_qaxt8")
+ignore_texture_size = true
+stretch_mode = 0
+metadata/_edit_use_anchors_ = true
+
+[node name="SettingScene" parent="." instance=ExtResource("11_imit5")]
+z_index = 1
+
+[connection signal="pressed" from="HBoxContainer/Setting" to="." method="_on_setting_pressed"]
+[connection signal="pressed" from="HBoxContainer/Option" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Panel/HBoxContainer/Home" to="." method="_on_home_pressed"]

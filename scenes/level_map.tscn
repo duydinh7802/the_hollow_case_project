@@ -1,0 +1,85 @@
+[gd_scene load_steps=11 format=3 uid="uid://bew646qea2y43"]
+
+[ext_resource type="Script" uid="uid://dql05o5gkfugu" path="res://scripts/level_map.gd" id="1_4jybi"]
+[ext_resource type="Texture2D" uid="uid://bhxvss6sptlx3" path="res://assets/menu/clueboard.png" id="1_uex8f"]
+[ext_resource type="PackedScene" uid="uid://bu8ftmrj73rrh" path="res://scenes/loading.tscn" id="2_26e65"]
+[ext_resource type="Texture2D" uid="uid://c3f27l0hfdoee" path="res://assets/menu/cutscene.png" id="2_e7mj4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7mj4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4jybi"]
+bg_color = Color(0.93333334, 0.80784315, 0.7411765, 0.5372549)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_26e65"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_12kai"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_28enl"]
+bg_color = Color(0.93333334, 0.80784315, 0.7411765, 0.5372549)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_28enl"]
+
+[node name="LevelMap" type="Node2D"]
+script = ExtResource("1_4jybi")
+
+[node name="Loading" parent="." instance=ExtResource("2_26e65")]
+position = Vector2(3.8146973e-06, 7.6293945e-06)
+scale = Vector2(0.99999994, 0.99999994)
+
+[node name="CutScene" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -3.0
+offset_top = -3.0
+offset_right = 1925.0
+offset_bottom = 1083.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_e7mj4")
+
+[node name="Levels" type="TextureRect" parent="."]
+offset_right = 1924.0
+offset_bottom = 1080.0
+texture = ExtResource("1_uex8f")
+
+[node name="Level1" type="Button" parent="Levels"]
+layout_mode = 0
+offset_left = 1110.0
+offset_top = 268.0
+offset_right = 1214.3209
+offset_bottom = 367.8866
+rotation = 0.11206663
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_e7mj4")
+theme_override_styles/hover = SubResource("StyleBoxFlat_4jybi")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_26e65")
+
+[node name="Level2" type="Button" parent="Levels"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 288.92444
+offset_top = -256.38983
+offset_right = 386.96228
+offset_bottom = -155.00467
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 0.12327892
+theme_override_colors/font_color = Color(0.875, 0.875, 0.875, 1)
+theme_override_colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0.95, 0.95, 0.95, 1)
+theme_override_colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+theme_override_styles/normal = SubResource("StyleBoxEmpty_12kai")
+theme_override_styles/hover = SubResource("StyleBoxFlat_28enl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_28enl")
+
+[connection signal="pressed" from="Levels/Level1" to="." method="_on_level_1_pressed"]

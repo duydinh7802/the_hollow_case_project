@@ -1,0 +1,29 @@
+[gd_scene load_steps=7 format=3 uid="uid://dpgcsvexnktoa"]
+
+[ext_resource type="Script" uid="uid://qcabee5w4iat" path="res://scripts/play_card_scene.gd" id="1_y84v5"]
+[ext_resource type="Texture2D" uid="uid://br02t2afavt03" path="res://assets/backgrounds/board.jpg" id="2_fy56y"]
+[ext_resource type="PackedScene" uid="uid://honhtf32r1i1" path="res://scenes/camera_2d.tscn" id="3_fy56y"]
+[ext_resource type="PackedScene" uid="uid://benmmccrq2vcj" path="res://scenes/timer_node.tscn" id="4_5n8c3"]
+[ext_resource type="PackedScene" uid="uid://lds10iq1p4r8" path="res://scenes/game_noti.tscn" id="5_5n8c3"]
+[ext_resource type="PackedScene" uid="uid://bkm8o2m1shneu" path="res://scenes/game_button.tscn" id="6_4qdml"]
+
+[node name="PlayCardScene" type="Node2D"]
+script = ExtResource("1_y84v5")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -11.0
+offset_top = -1.0
+offset_right = 1916.0
+offset_bottom = 1074.0
+texture = ExtResource("2_fy56y")
+expand_mode = 1
+
+[node name="Camera2D" parent="." instance=ExtResource("3_fy56y")]
+position = Vector2(952, 537)
+
+[node name="TimerNode" parent="." instance=ExtResource("4_5n8c3")]
+position = Vector2(940, 51)
+
+[node name="GameNoti" parent="." instance=ExtResource("5_5n8c3")]
+
+[node name="GameButton" parent="." instance=ExtResource("6_4qdml")]
