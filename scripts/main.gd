@@ -3,7 +3,7 @@ extends Node2D
 @onready var main_menu := $MainMenu
 
 func _ready():
-	BackgroundMusic.volume_db = lerp(-80, 0, 100)
+	BackgroundMusic.play()
 	main_menu.visible = true
 
 	# Kết nối tín hiệu
