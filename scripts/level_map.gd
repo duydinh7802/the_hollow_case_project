@@ -59,3 +59,8 @@ func _unlock_level_2():
 	print("UNLOCK LEVEL 2")  # để debug
 	btn_level_2.visible = true
 	GameState.level_2_unlocked = true    # đảm bảo lưu trạng thái
+
+
+func _on_home_pressed() -> void:
+
+	get_tree().change_scene_to_file("res://scenes/main.tscn")

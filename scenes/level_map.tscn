@@ -1,9 +1,11 @@
-[gd_scene load_steps=11 format=3 uid="uid://bew646qea2y43"]
+[gd_scene load_steps=13 format=3 uid="uid://bew646qea2y43"]
 
 [ext_resource type="Script" uid="uid://dql05o5gkfugu" path="res://scripts/level_map.gd" id="1_4jybi"]
 [ext_resource type="Texture2D" uid="uid://bhxvss6sptlx3" path="res://assets/menu/clueboard.png" id="1_uex8f"]
 [ext_resource type="PackedScene" uid="uid://bu8ftmrj73rrh" path="res://scenes/loading.tscn" id="2_26e65"]
 [ext_resource type="Texture2D" uid="uid://c3f27l0hfdoee" path="res://assets/menu/cutscene.png" id="2_e7mj4"]
+[ext_resource type="Texture2D" uid="uid://b7tkqcrcaix4l" path="res://assets/buttons/home_ingame.png" id="5_28enl"]
+[ext_resource type="Texture2D" uid="uid://ctpvxd5xj3bo2" path="res://assets/buttons/home_ingame_press.png" id="6_4mfww"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_e7mj4"]
 
@@ -82,4 +84,16 @@ theme_override_styles/normal = SubResource("StyleBoxEmpty_12kai")
 theme_override_styles/hover = SubResource("StyleBoxFlat_28enl")
 theme_override_styles/focus = SubResource("StyleBoxEmpty_28enl")
 
+[node name="Home" type="TextureButton" parent="."]
+offset_left = 1703.0
+offset_top = 12.0
+offset_right = 1903.1371
+offset_bottom = 212.0
+texture_normal = ExtResource("5_28enl")
+texture_pressed = ExtResource("6_4mfww")
+texture_hover = ExtResource("6_4mfww")
+ignore_texture_size = true
+stretch_mode = 0
+
 [connection signal="pressed" from="Levels/Level1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Home" to="." method="_on_home_pressed"]

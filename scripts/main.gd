@@ -3,7 +3,6 @@ extends Node2D
 @onready var main_menu := $MainMenu
 
 func _ready():
-	BackgroundMusic.play()
 	main_menu.visible = true
 
 	# Kết nối tín hiệu
